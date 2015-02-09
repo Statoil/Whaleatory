@@ -28,17 +28,18 @@
 </head>
 <body ng-controller="gmapController">
 <div class="row">
-    <div class="col-lg-3" ></div>
-    <div class="col-lg-6" style="text-align: center;font-family: 'Sansita One', cursive;font-size:40pt" >
-
-        This is a map
-
+    <div class="col-lg-1" ></div>
+    <div class="col-lg-7" style="text-align: center;font-family: 'Sansita One', cursive;font-size:30pt" >
+        Location
     </div>
-    <div class="col-lg-3" ></div>
+    <div class="col-lg-3" style="text-align: center;font-family: 'Sansita One', cursive;font-size:30pt">
+        Details
+    </div>
+    <div class="col-lg-1" ></div>
 </div>
     <div class="row">
-        <div class="col-lg-3" ></div>
-        <div class="col-lg-6" >
+        <div class="col-lg-1" ></div>
+        <div class="col-lg-7" >
 
                 <ui-gmap-google-map center='map.center' zoom='map.zoom'>
 
@@ -47,7 +48,28 @@
                 </ui-gmap-google-map>
 
         </div>
-        <div class="col-lg-3" ></div>
+        <div class="col-lg-3" >
+            <table class="table table-normal">
+                <thead>
+                <tr>
+                    <th>Lat</th>
+                    <th>Lon</th>
+                    <th>Description</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="marker in markers">
+                    <td>{{marker.pos.latitude}}</td>
+                    <td>{{marker.pos.longitude}}</td>
+                    <td>{{marker.description}}</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-1" ></div>
+
     </div>
 
 

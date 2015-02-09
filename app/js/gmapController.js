@@ -14,7 +14,7 @@ angular.module('whaleatory').controller('gmapController', ['$scope','$http',
         });
 
         //GMap related below
-        $scope.map = {center: {latitude: 63.4394346, longitude: 10.481066 }, zoom: 14 };
+        $scope.map = {mapTypeId: 'SATELLITE', center: {latitude: 63.4394346, longitude: 10.481066 }, zoom: 14 };
         $scope.options = {scrollwheel: false};
 
     }
