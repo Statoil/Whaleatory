@@ -4,3 +4,4 @@ node_modules
 .idea/
 Whaleatory.iml
 npm-debug.log
+.project
