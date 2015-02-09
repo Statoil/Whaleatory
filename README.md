@@ -13,7 +13,7 @@ Install MongoDB typical installation: https://www.mongodb.org/dr//fastdl.mongodb
 Start mongodb 
 ```sh
 cd <your_mongo_db_install_directory>
-mongod --dbpath <full_path_to_your_folder>
+mongod --dbpath <full_path_to_your_datastore_folder>
 ```
 
 Select database
