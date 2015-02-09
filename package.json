@@ -7,11 +7,12 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "body-parser": "*",
+    "bower": "*",
+    "dotenv": "*",
     "express": "~4.9.x",
     "mongodb": "*",
-    "monk": "*",
-    "dotenv": "*",
-    "bower": "*"	
+    "monk": "*"
   },
   "repository": {
     "type": "git",
