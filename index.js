@@ -4,7 +4,8 @@ var app = express();
 //MongoDB setup
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/whaleatorydb');
+//var db = monk('localhost:27017/whaleatorydb');
+var db = monk(process.env.MONGOLAB_URI);
 
 app.set('port', (process.env.PORT || 5000))
 
