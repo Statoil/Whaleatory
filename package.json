@@ -9,7 +9,8 @@
   "dependencies": {
     "express": "~4.9.x",
     "mongodb": "*",
-    "monk": "*"
+    "monk": "*",
+    "dotenv": "*"
   },
   "engines": {
     "node": "0.10.x"
