@@ -1,3 +1,6 @@
 node_modules
 /app/.idea
 /app/bower_components
+.idea/
+Whaleatory.iml
+npm-debug.log
