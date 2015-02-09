@@ -51,7 +51,7 @@ app.get('/mock', function(request, response){
   		"time" : d1
   	}];
   var collection = db.get('observation');
-  var collection = collection.insert(observations);
+  collection.insert(observations);
   response.send("Added entries to the database" + observations);
 })
 
