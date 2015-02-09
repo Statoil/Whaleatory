@@ -41,7 +41,9 @@ app.get('/observation', function(request, response){
 app.get('/observation-mock', function(request, response){
               response.send( [
                 {id: 1, pos: {latitude: 63.4494346, longitude: 10.481066 }, icon: 'img/whaletail.png'},
-                {id: 2, pos: {latitude: 63.4474346, longitude: 10.483066 }, icon: 'img/whaletail.png'}
+                {id: 2, pos: {latitude: 63.4474346, longitude: 10.483066 }, icon: 'img/whaletail.png'},
+                {id: 3, pos: {latitude: 63.4394346, longitude: 10.481466 }, icon: 'img/whaletail.png'},
+                {id: 4, pos: {latitude: 63.4474946, longitude: 10.483096 }, icon: 'img/whaletail.png'}                
             ]);
 })
 
