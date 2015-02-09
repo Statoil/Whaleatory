@@ -38,6 +38,23 @@ app.get('/observation', function(request, response){
 //  })
 })
 
+app.get('/mock', function(request, response){
+  request.db=db;
+  var d1 = new Date().toJSON();
+  var observations = [
+  	{ 	"lat"  : "63.4394346", 
+  		"lon" : "10.481066",
+  		"time" : d1
+  	}, 
+  	{   "lat"  : "63.4384346", 
+  		"lon" : "10.482066", 
+  		"time" : d1
+  	}];
+  var collection = db.get('observation');
+  var collection = collection.insert(observations);
+  response.send("Added entries to the database" + observations);
+})
+
 
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
