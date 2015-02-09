@@ -29,10 +29,7 @@ app.get('/observation', function(request, response){
   collection.find({},{},function(e,docs){
   	var result = [];
   	var iconTail = 'img/whaletail.png';
-  	for(var i=0;i<docs.length;i++){
-  		result.push({id: i, pos: {latitude: docs[i].lat, longitude: docs[i].lon }, icon: iconTail})
-  	}
-    response.send(result);
+    response.send(docs);
   })
 })
 
@@ -51,28 +48,15 @@ app.post('/observation', function(request, response) {
     });
 });
 
-
-app.get('/observation-mock', function(request, response){
-    response.send( [
-        {id: 1, pos: {latitude: 63.4494346, longitude: 10.481066 }, icon: 'img/whaletail.png', description: 'Johnny Longtail 1969'},
-        {id: 2, pos: {latitude: 63.4474346, longitude: 10.483066 }, icon: 'img/whaletail.png', description: 'Peter Shorttail 1974'},
-        {id: 3, pos: {latitude: 63.4394346, longitude: 10.481466 }, icon: 'img/whaletail.png', description: 'Lenny WideTail 1989'},
-        {id: 4, pos: {latitude: 63.4474946, longitude: 10.483096 }, icon: 'img/whaletail.png', description: 'Clara Narrowtail 1991'}                
-    ]);
-})
-
 app.get('/mock', function(request, response){
   request.db=db;
   var d1 = new Date().toJSON();
   var observations = [
-  	{ 	"lat"  : 63.4394346, 
-  		"lon" : 10.481066,
-  		"time" : d1
-  	}, 
-  	{   "lat"  : 63.4384346, 
-  		"lon" : 10.482066, 
-  		"time" : d1
-  	}];
+	  	{pos: {latitude: 63.4494346, longitude: 10.481066 }, icon: 'img/whaletail.png', comment: 'Johnny Longtail 1969'},
+	    {pos: {latitude: 63.4474346, longitude: 10.483066 }, icon: 'img/whaletail.png', comment: 'Peter Shorttail 1974'},
+	    {pos: {latitude: 63.4394346, longitude: 10.481466 }, icon: 'img/whaletail.png', comment: 'Lenny WideTail 1989'}
+    ];
+  
   var collection = db.get('observation');
   collection.insert(observations);
   response.send("Added entries to the database" + observations);

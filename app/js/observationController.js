@@ -6,9 +6,9 @@ angular.module('whaleatory').controller('observationController', ['$scope','$htt
         var vm = this;
 
 
-		$scope.newObs = {lat:"latitude", lon:"longitude", comment:"comment", species:"species", time:"time" };
+		$scope.newObs = {pos: {latitude:"63.4474946", longitude:"10.481256"}, comment:"comment", species:"species", time:"time", icon:"img/whaletail.png"};
         $scope.proceed = function( ) {
-	        	// Simple POST request example (passing data) :
+	        // Simple POST request example (passing data) :
 			$http.post('/observation', {observations:$scope.newObs}).
 			  success(function(data, status, headers, config) {
 			    // this callback will be called asynchronously

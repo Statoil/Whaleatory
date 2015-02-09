@@ -8,7 +8,7 @@ angular.module('whaleatory').controller('gmapController', ['$scope','$http',
         $scope.markers = [];
 
 
-        var promise = $http.get('/observation-mock').then(function (response) {
+        var promise = $http.get('/observation').then(function (response) {
             $scope.markers = response.data;
 
         });
