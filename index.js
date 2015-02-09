@@ -32,10 +32,10 @@ app.get('/userlist', function(request, response){
 app.get('/observation', function(request, response){
   request.db=db;
   var collection = db.get('observation');
-  response.send("Running in environment " + process.env.ENVIRONMENT + " - " + process.env.MONGOLAB_URI);
-//  collection.find({},{},function(e,docs){
-//    response.send(docs);
-//  })
+//  response.send("Running in environment " + process.env.ENVIRONMENT + " - " + process.env.MONGOLAB_URI);
+  collection.find({},{},function(e,docs){
+    response.send(docs);
+  })
 })
 
 app.get('/mock', function(request, response){
