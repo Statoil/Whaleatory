@@ -38,6 +38,13 @@ app.get('/observation', function(request, response){
   })
 })
 
+app.get('/observation-mock', function(request, response){
+              response.send( [
+                {id: 1, pos: {latitude: 63.4494346, longitude: 10.481066 }, icon: 'img/whaletail.png'},
+                {id: 2, pos: {latitude: 63.4474346, longitude: 10.483066 }, icon: 'img/whaletail.png'}
+            ]);
+})
+
 app.get('/mock', function(request, response){
   request.db=db;
   var d1 = new Date().toJSON();
