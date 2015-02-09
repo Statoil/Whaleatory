@@ -32,10 +32,10 @@ app.get('/userlist', function(request, response){
 app.get('/observation', function(request, response){
   request.db=db;
   var collection = db.get('observation');
-  response.send("Running in environment " + process.env.ENVIRONMENT + " - " + process.env.MONGOLAB_URI);
-//  collection.find({},{},function(e,docs){
-//    response.send(docs);
-//  })
+//  response.send("Running in environment " + process.env.ENVIRONMENT + " - " + process.env.MONGOLAB_URI);
+  collection.find({},{},function(e,docs){
+    response.send(docs);
+  })
 })
 
 app.get('/mock', function(request, response){
@@ -51,7 +51,7 @@ app.get('/mock', function(request, response){
   		"time" : d1
   	}];
   var collection = db.get('observation');
-  var collection = collection.insert(observations);
+  collection.insert(observations);
   response.send("Added entries to the database" + observations);
 })
 
