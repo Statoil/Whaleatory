@@ -5,3 +5,5 @@ node_modules
 Whaleatory.iml
 npm-debug.log
 .project
+.env
+
