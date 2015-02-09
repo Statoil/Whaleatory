@@ -1,4 +1,5 @@
 var express = require('express');
+var path = require('path');
 var app = express();
 
 //MongoDB setup
@@ -6,10 +7,11 @@ var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('localhost:27017/whaleatorydb');
 
+app.use(express.static(path.resolve(__dirname, '')));
 app.set('port', (process.env.PORT || 5000))
 
 app.get('/', function(request, response) {
-   response.send("Whaleatory" );
+   response.redirect('/app');
 });
 
 app.get('/userlist', function(request, response){
