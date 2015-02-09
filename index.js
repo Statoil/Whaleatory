@@ -29,6 +29,7 @@ app.get('/observation', function(request, response){
   var collection = db.get('observation');
   collection.find({},{},function(e,docs){
     response.send(docs);
+  })
 })
 
 app.listen(app.get('port'), function() {
