@@ -8,9 +8,22 @@ This application support the [Getting Started with Node on Heroku](https://devce
 
 Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
 
+Install MongoDB typical installation: https://www.mongodb.org/dr//fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-2.6.7-signed.msi/download
+
+Start mongodb 
 ```sh
-$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
+cd <your_mongo_db_install_directory>
+mongod --dbpath <full_path_to_your_folder>
+```
+
+Select database
+```sh
+use <my_database_name>
+```
+
+```sh
+$ git clone git@github.com:Statoil/Whaleatory.git # or clone your own fork
+$ cd Whaleatory
 $ npm install
 $ npm start
 ```
