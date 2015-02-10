@@ -10,13 +10,13 @@ angular.module('whaleatory').controller('observationController', ['$scope','$htt
 	        { id: 1, type: "Whale", name: "North Atlantic Right Whales", icon:"img/icon/whale_trans_small.png"},
 
 	        { id: 2, type: "Whale", name: "Fin Whale", icon:"img/icon/whale_trans_small.png", image:"img/images/FinWhale.jpg"},
-	        { id: 3, type: "Whale", name: "Humpback Whale", icon:"img/icon/whale_trans_small.png"},
-	        { id: 4, type: "Whale", name: "Killer Whale", icon:"img/icon/whale_trans_small.png"},
+	        { id: 3, type: "Whale", name: "Humpback Whale", icon:"img/icon/whale_trans_small.png", image:"img/images/HumpbackWhale.jpg"},
+	        { id: 4, type: "Whale", name: "Killer Whale", icon:"img/icon/whale_trans_small.png", image:"img/images/KillerWhale.jpg"},
 	        { id: 5, type: "Whale", name: "Pygmy Sperm Whale", icon:"img/icon/whale_trans_small.png", image:"img/images/SpermWhale.jpg"},
-	        { id: 6, type: "Dolphin", name: "Atlantic Spotted Dolphin", icon:"img/icon/dolphin_trans_small.png"},
-	        { id: 7, type: "Dolphin", name: "Bottlenose Dolphin", icon:"img/icon/dolphin_trans_small.png"},
+	        { id: 6, type: "Dolphin", name: "Atlantic Spotted Dolphin", icon:"img/icon/dolphin_trans_small.png", image:"img/images/SpottedDolphin.jpg"},
+	        { id: 7, type: "Dolphin", name: "Bottlenose Dolphin", icon:"img/icon/dolphin_trans_small.png", image:"img/images/BottlenoseDolphin.jpg"},
 	        { id: 8, type: "Seal", name: "Northern Elephant Seal", icon:"img/icon/seal_trans_small.png", image:"img/images/NorthernElephantSeal.jpg"},
-	        { id: 9, type: "Seal", name: "Spotted Seal", icon:"img/icon/seal_trans_small.png"}
+	        { id: 9, type: "Seal", name: "Spotted Seal", icon:"img/icon/seal_trans_small.png", image:"img/images/SpottedSeal.jpg"}
 	    ];  
 	    
 		$scope.newObs = {pos: {latitude:"63.4474946", longitude:"10.481256"}, comment:"comment", species:"species", time:"time"};
