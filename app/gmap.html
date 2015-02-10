@@ -43,9 +43,12 @@
             <ui-gmap-google-map center='map.center' zoom='map.zoom'>
                 <ui-gmap-marker  options="marker.options" icon="marker.species.icon" ng-repeat="marker in markers" coords="marker.pos" idkey="marker._id">
                     <ui-gmap-window options="marker.windowOptions" closeClick="closeClick()">
-                        <div style="text-align: center;font-family: 'Sansita One', cursive;font-size:12pt">
+                        <div style="text-align: center;font-family: 'Sansita One', cursive;font-size:15pt">
                             {{marker.species.name}}</br>
                             <img src="{{marker.species.image}}" height="250px"/>
+                            </br></br>
+                              <div style="color:#aaaaaa">{{marker.comment}}</div>
+                            </br>
                         </div>
                     </ui-gmap-window>
                 </ui-gmap-marker>
