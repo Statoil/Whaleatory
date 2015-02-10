@@ -28,7 +28,6 @@ app.get('/observation', function(request, response){
   var collection = db.get('observation');
   collection.find({},{},function(e,docs){
   	var result = [];
-  	var iconTail = 'img/whaletail.png';
     response.send(docs);
   })
 })
@@ -52,11 +51,9 @@ app.get('/mock', function(request, response){
   request.db=db;
   var d1 = new Date().toJSON();
   var observations = [
-	  	{pos: {latitude: 63.4494346, longitude: 10.481066 }, icon: 'img/whaletail.png', comment: 'Johnny Longtail 1969'},
-	    {pos: {latitude: 63.4474346, longitude: 10.483066 }, icon: 'img/whaletail.png', comment: 'Peter Shorttail 1974'},
-	    {pos: {latitude: 63.4394346, longitude: 10.481466 }, icon: 'img/whaletail.png', comment: 'Lenny WideTail 1989'},
-        {pos: {latitude: 63.443962, longitude: 10.486357 }, icon: 'img/whaletail.png', comment: 'Benny BigTail 1995'},
-        {pos: {latitude: 63.441636, longitude: 10.495424 }, icon: 'img/whaletail.png', comment: 'Ronny RoughTail 1989'}
+	  	{pos: {latitude: 63.4494346, longitude: 10.481066 }, icon: 'img/icon/dolphin_trans_small.png', comment: 'Johnny Longtail 1969'},
+	    {pos: {latitude: 63.4474346, longitude: 10.483066 }, icon: 'img/icon/seal_trans_small.png', comment: 'Peter Shorttail 1974'},
+	    {pos: {latitude: 63.4394346, longitude: 10.481466 }, icon: 'img/icon/whale_trans_small.png', comment: 'Lenny WideTail 1989'}
     ];
   
   var collection = db.get('observation');
