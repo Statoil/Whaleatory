@@ -28,5 +28,5 @@
 			<select name="species" style="  height: 26px;  margin-right: 4px;" data-ng-model="newObs.species" data-ng-options="s.name +' (' + s.type + ')' for s in species"/>
 			<input type="datetime" name="time" ng-model = "newObs.time" />
 			<button ng-click="proceed()" class="btn btn-info">Add</button>
-    </body>
+			<div><img ng-src="{{newObs.species.image}}"/></div>
 </html>            
