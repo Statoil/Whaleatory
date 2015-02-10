@@ -31,17 +31,29 @@ angular.module('whaleatory').controller('gmapController', ['$scope','$http','$ti
         $scope.markers = [];
         $scope.$watch('liveData', function () {
             $timeout($scope.onTimeout, refreshRate);
-            var tmp = [];
+
             if (typeof $scope.liveData.updated != 'undefined') {
                 for (var i = 0; i < $scope.liveData.updated.length; i++) {
                     var marker = $scope.liveData.updated[i];
-                    //console.log(JSON.stringify(marker));
-                    tmp.push(marker);
+                    if (!containsObject(marker,$scope.markers)) {
+                        $scope.markers.push(marker);
+                    }
                 }
             }
-            $scope.markers = tmp;
+
         });
 
     }
 
 ]);
+
+function containsObject(obj, list) {
+    var i;
+    for (i = 0; i < list.length; i++) {
+        if (list[i] === obj) {
+            return true;
+        }
+    }
+
+    return false;
+}
