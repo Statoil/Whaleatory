@@ -11,16 +11,16 @@ import json
 import urllib2
 
 def post_observation(id, lat, lon, comment, time):
-    type = [["Whale", "Fin Whale", "img/icon/whale_trans_small.png", "img/images/FinWhale.jpg"], ["Seal", "Northern Elephant Seal", "img/icon/seal_trans_small.png", "img/images/NorthernElephantSeal.jpg"], ["Whale", "Pygmy Sperm Whale", "img/icon/whale_trans_small.png", "img/images/SpermWhale.jpg"]]
+    type = [["Whale", "Fin Whale", "img/icon/whale_trans_small.png", "img/images/FinWhale.jpg", 2], ["Seal", "Northern Elephant Seal", "img/icon/seal_trans_small.png", "img/images/NorthernElephantSeal.jpg", 8], ["Whale", "Pygmy Sperm Whale", "img/icon/whale_trans_small.png", "img/images/SpermWhale.jpg", 5]]
     i = random.randint(0, 2)
     print i,
     print type[i]
 	
-    data = {"observations": {"pos":{"latitude":str(lat),"longitude":str(lon)},"comment":comment,"species":{"id" : id, "type" : type[i][0], "name" : type[i][1], "icon" : type[i][2], "image":type[i][3]},"time": str(time)}}	
+    data = {"observations": {"pos":{"latitude":str(lat),"longitude":str(lon)},"comment":comment,"species":{"id" : type[i][4], "type" : type[i][0], "name" : type[i][1], "icon" : type[i][2], "image":type[i][3]},"time": str(time)}}	
 
     data = json.dumps(data)
     print data
-
+	
     url = "https://calm-reef-3273.herokuapp.com/observation"
     req = urllib2.Request(url, data, {'Content-Type': 'application/json'})
     f = urllib2.urlopen(req)
@@ -46,11 +46,12 @@ while continueLoop:
     
     if data_type == "m":
         readable_data_type = "measurement"
-        random_observation = random.random()
-        observation_lat = region_lat[0] + (region_lat[1] - region_lat[0]) * random_observation
-        observation_lon = region_lon[0] + (region_lon[1] - region_lon[0]) * random_observation
+        random_lat = random.random()
+        random_lon = random.random()
+        observation_lat = region_lat[0] + (region_lat[1] - region_lat[0]) * random_lat
+        observation_lon = region_lon[0] + (region_lon[1] - region_lon[0]) * random_lon
         print "lat: %r, long: %r" % (observation_lat, observation_lon)
-        post_observation(id_counter, observation_lat, observation_lon, "From Outer Space_" + str(random_observation), time.strftime("%c"))
+        post_observation(id_counter, observation_lat, observation_lon, "From Outer Space_" + str(random_lat+ random_lon), time.strftime("%c"))
         id_counter +=1
     print "---------------------------------------------------------------"
 
