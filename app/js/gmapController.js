@@ -1,7 +1,7 @@
 
-angular.module('whaleatory').controller('gmapController', ['$scope','$http',
+angular.module('whaleatory').controller('gmapController', ['$scope','$http','$timeout',
 
-    function ($scope,$http) {
+    function ($scope,$http,$timeout) {
 
         var refreshRate = 1000;
         var vm = this;
