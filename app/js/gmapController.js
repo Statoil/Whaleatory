@@ -3,7 +3,7 @@ angular.module('whaleatory').controller('gmapController', ['$scope','$http','$ti
 
     function ($scope,$http,$timeout) {
 
-        var refreshRate = 2000;
+        var refreshRate = 5000;
         var vm = this;
         var iconTail = 'img/whaletail.png';
 
