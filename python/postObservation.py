@@ -14,7 +14,7 @@ data = {
 data = json.dumps(data)
 print data
 
-url = "https://glacial-headland-5747.herokuapp.com/observation"
+url = "https://calm-reef-3273.herokuapp.com/observation"
 req = urllib2.Request(url, data, {'Content-Type': 'application/json'})
 
  
