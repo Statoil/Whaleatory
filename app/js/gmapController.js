@@ -20,6 +20,7 @@ angular.module('whaleatory').controller('gmapController', ['$scope','$http','$ti
                 success(function(data, status, headers, config) {
                     refresh.updated = data;
                     $scope.liveData = refresh;
+                    $scope.markers = $scope.liveData.updated;
                 }).
                 error(function(data, status, headers, config) {
                 });
