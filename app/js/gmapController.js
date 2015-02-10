@@ -3,7 +3,7 @@ angular.module('whaleatory').controller('gmapController', ['$scope','$http','$ti
 
     function ($scope,$http,$timeout) {
 
-        var refreshRate = 1000;
+        var refreshRate = 2000;
         var vm = this;
         var iconTail = 'img/whaletail.png';
 
@@ -50,7 +50,7 @@ angular.module('whaleatory').controller('gmapController', ['$scope','$http','$ti
 function containsObject(obj, list) {
     var i;
     for (i = 0; i < list.length; i++) {
-        if (list[i] === obj) {
+        if (list[i]._id === obj._id) {
             return true;
         }
     }
