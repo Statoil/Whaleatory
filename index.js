@@ -53,7 +53,7 @@ app.get('/mock', function(request, response){
   var observations = [
 	  	{pos: {latitude: 63.4494346, longitude: 10.481066 }, "species" : {"id" : 2, "type" : "Whale", "name" : "Fin Whale", "icon" : "img/icon/whale_trans_small.png", "image":"img/images/FinWhale.jpg"}, comment: 'Johnny Longtail 1969'},
 	    {pos: {latitude: 63.4474346, longitude: 10.483066 }, "species" : {"id" : 5, type: "Whale", name: "Pygmy Sperm Whale", icon:"img/icon/whale_trans_small.png", "image":"img/images/SpermWhale.jpg"}, comment: 'Peter Shorttail 1974'},
-	    {pos: {latitude: 63.4394346, longitude: 10.481466 }, "species" : {"id" : 8, type: "Seal", name: "Northern Elephant Seal", icon:"img/icon/seal_trans_small.png", "image":"img/images/NorthernElephantSeal.jpg", comment: 'Lenny WideTail 1989'}
+	    {pos: {latitude: 63.4394346, longitude: 10.481466 }, "species" : {"id" : 8, type: "Seal", name: "Northern Elephant Seal", icon:"img/icon/seal_trans_small.png", "image":"img/images/NorthernElephantSeal.jpg"}, comment: 'Lenny WideTail 1989'}
     ];
   
   var collection = db.get('observation');
