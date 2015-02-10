@@ -42,7 +42,9 @@
         <div class="col-lg-7" >
 
                 <ui-gmap-google-map center='map.center' zoom='map.zoom'>
-                      <ui-gmap-marker  icon="marker.icon" ng-repeat="marker in markers" coords="marker.pos"   idkey="marker.id"/>
+
+                      <ui-gmap-marker  icon="marker.icon" ng-repeat="marker in markers" coords="marker.pos"   idkey="marker._id"/>
+
                 </ui-gmap-google-map>
 
         </div>
@@ -52,7 +54,7 @@
                 <tr>
                     <th>Lat</th>
                     <th>Lon</th>
-                    <th>Description</th>
+                    <th>Comment</th>
 
                 </tr>
                 </thead>
@@ -60,11 +62,12 @@
                 <tr ng-repeat="marker in markers">
                     <td>{{marker.pos.latitude}}</td>
                     <td>{{marker.pos.longitude}}</td>
-                    <td>{{marker.description}}</td>
+                    <td>{{marker.comment}}</td>
                 </tr>
 
                 </tbody>
             </table>
+             <a ng-href="addobservation.html">Add observation</a>
         </div>
         <div class="col-lg-1" ></div>
 
