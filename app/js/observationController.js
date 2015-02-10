@@ -7,8 +7,7 @@ angular.module('whaleatory').controller('observationController', ['$scope','$htt
 
         $scope.species =
 	    [
-	        { id: 1, type: "Whale", name: "North Atlantic Right Whales", icon:"img/icon/whale_trans_small.png"},
-
+	        { id: 1, type: "Whale", name: "North Atlantic Right Whales", icon:"img/icon/whale_trans_small.png", image:"img/images/NorthernAtlanticRightWhale.jpg"},
 	        { id: 2, type: "Whale", name: "Fin Whale", icon:"img/icon/whale_trans_small.png", image:"img/images/FinWhale.jpg"},
 	        { id: 3, type: "Whale", name: "Humpback Whale", icon:"img/icon/whale_trans_small.png", image:"img/images/HumpbackWhale.jpg"},
 	        { id: 4, type: "Whale", name: "Killer Whale", icon:"img/icon/whale_trans_small.png", image:"img/images/KillerWhale.jpg"},
