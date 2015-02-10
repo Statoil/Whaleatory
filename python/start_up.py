@@ -11,12 +11,12 @@ import json
 import urllib2
 
 def post_observation(id, lat, lon, comment, time):
-    type = [["Whale", "Fin Whale", "img/icon/whale_trans_small.png", "img/images/FinWhale.jpg"], ["Seal", "Northern Elephant Seal", "img/icon/seal_trans_small.png", "img/images/NorthernElephantSeal.jpg"], ["Whale", "Pygmy Sperm Whale", "img/icon/whale_trans_small.png", "img/images/SpermWhale.jpg"]]
+    type = [["Whale", "Fin Whale", "img/icon/whale_trans_small.png", "img/images/FinWhale.jpg", 2], ["Seal", "Northern Elephant Seal", "img/icon/seal_trans_small.png", "img/images/NorthernElephantSeal.jpg", 8], ["Whale", "Pygmy Sperm Whale", "img/icon/whale_trans_small.png", "img/images/SpermWhale.jpg", 5]]
     i = random.randint(0, 2)
     print i,
     print type[i]
 	
-    data = {"observations": {"pos":{"latitude":str(lat),"longitude":str(lon)},"comment":comment,"species":{"id" : id, "type" : type[i][0], "name" : type[i][1], "icon" : type[i][2], "image":type[i][3]},"time": str(time)}}	
+    data = {"observations": {"pos":{"latitude":str(lat),"longitude":str(lon)},"comment":comment,"species":{"id" : type[i][4], "type" : type[i][0], "name" : type[i][1], "icon" : type[i][2], "image":type[i][3]},"time": str(time)}}	
 
     data = json.dumps(data)
     print data
