@@ -15,7 +15,9 @@ angular.module('whaleatory').controller('observationController', ['$scope','$htt
 	        { id: 6, type: "Dolphin", name: "Atlantic Spotted Dolphin" },
 	        { id: 7, type: "Dolphin", name: "Bottlenose Dolphin" },
 	        { id: 8, type: "Seal", name: "Northern Elephant Seal" },
-	        { id: 9, type: "Seal", name: "Spotted Seal" }
+	        { id: 9, type: "Seal", name: "Spotted Seal" },
+            { id: 10, type: "Penguin", name: "King Penguin" },
+            { id: 11, type: "Penguin", name: "Rockhopper Penguin" }
 	    ];  
 	    
 	    $scope.selectedSpecies = {};
