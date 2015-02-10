@@ -31,12 +31,15 @@ angular.module('whaleatory').controller('gmapController', ['$scope','$http','$ti
         $scope.markers = [];
         $scope.$watch('liveData', function () {
             $timeout($scope.onTimeout, refreshRate);
+            var tmp = [];
             if (typeof $scope.liveData.updated != 'undefined') {
                 for (var i = 0; i < $scope.liveData.updated.length; i++) {
                     var marker = $scope.liveData.updated[i];
-                    console.log(JSON.stringify(marker));
+                    //console.log(JSON.stringify(marker));
+                    tmp.push(marker);
                 }
             }
+            $scope.markers = tmp;
         });
 
     }
