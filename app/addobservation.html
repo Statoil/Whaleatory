@@ -25,7 +25,7 @@
 			<input type="text" name="longitude" ng-model = "newObs.pos.longitude" />
 			<input type="text" name="comment" ng-model = "newObs.comment"/>
     		<!--<select name="type" data-ng-model="species" data-ng-options="s.type for s in species | unique:'type'"/>-->
-			<select name="species" data-ng-model="newObs.species" data-ng-options="s.name +' (' + s.type + ')' for s in species"/>                
+			<select name="species" style="  height: 26px;  margin-right: 4px;" data-ng-model="newObs.species" data-ng-options="s.name +' (' + s.type + ')' for s in species"/>
 			<input type="datetime" name="time" ng-model = "newObs.time" />
 			<button ng-click="proceed()" class="btn btn-info">Add</button>
     </body>
