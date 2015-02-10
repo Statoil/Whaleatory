@@ -52,19 +52,17 @@
             <table class="table table-normal">
                 <thead>
                 <tr>
-                    <th>Lat</th>
-                    <th>Lon</th>
                     <th>Comment</th>
-
+                    <th>Species</th>
+					<th>Time</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr ng-repeat="marker in markers">
-                    <td>{{marker.pos.latitude}}</td>
-                    <td>{{marker.pos.longitude}}</td>
                     <td>{{marker.comment}}</td>
+                    <td>{{marker.species.name}}</td>
+                    <td>{{marker.time}}</td>
                 </tr>
-
                 </tbody>
             </table>
              <a ng-href="addobservation.html">Add observation</a>
