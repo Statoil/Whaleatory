@@ -21,6 +21,7 @@ angular.module('whaleatory').controller('gmapController', ['$scope','$http','$ti
                     refresh.updated = data;
                     $scope.liveData = refresh;
                     $scope.markers = $scope.liveData.updated;
+                    $scope.markers[$scope.liveData.updated.length-1].options = { "animation": 1 };
                 }).
                 error(function(data, status, headers, config) {
                 });
@@ -36,9 +37,7 @@ angular.module('whaleatory').controller('gmapController', ['$scope','$http','$ti
             if (typeof $scope.liveData.updated != 'undefined') {
                 for (var i = 0; i < $scope.liveData.updated.length; i++) {
                     var marker = $scope.liveData.updated[i];
-                    if (angular.isDefined($scope.markers[i])) {
-                        $scope.markers[i].options = { "animation": 0 };
-                    }
+
                     if (!containsObject(marker,$scope.markers)) {
                         var last = $scope.liveData.updated.length == (i+1) ? 1 : 0;
                         marker.options = { "animation": last };
