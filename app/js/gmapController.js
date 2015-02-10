@@ -36,13 +36,25 @@ angular.module('whaleatory').controller('gmapController', ['$scope','$http','$ti
                 for (var i = 0; i < $scope.liveData.updated.length; i++) {
                     var marker = $scope.liveData.updated[i];
                     if (!containsObject(marker,$scope.markers)) {
+                        var last = $scope.liveData.updated.length == (i+1) ? 1 : 0;
+                        marker.options = { "animation": last };
                         $scope.markers.push(marker);
                     }
                 }
             }
 
         });
+        $scope.windowOptions = {
+            visible: false
+        };
 
+        $scope.onClick = function() {
+            $scope.windowOptions.visible = !$scope.windowOptions.visible;
+        };
+
+        $scope.closeClick = function() {
+            $scope.windowOptions.visible = false;
+        };
     }
 
 ]);
