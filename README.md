@@ -1,8 +1,13 @@
 # Whaleatory
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+Register whale observations from a Phidget/Binoculars arrangement, and post observations to the Cloud observation map.
 
-This application support the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
+Url to working cloud version: 
+
+## Technology Stack
+
+[MEAN](http://mean.io/) stack (MongoDB, Express, AngularJS and Node.JS.)</br>
+[Phidget](http://www.phidgets.com/) with [Python](https://www.python.org/) code 
 
 ## Running Locally
 

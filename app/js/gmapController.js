@@ -8,6 +8,7 @@ angular.module('whaleatory').controller('gmapController', ['$scope','$http','$ti
         var iconTail = 'img/whaletail.png';
 
         $scope.liveData = {};
+        $scope.markers = [];
 
         //GMap related below
         $scope.map = {mapTypeId: 'SATELLITE', center: {latitude: 63.4394346, longitude: 10.481066 }, zoom: 14 };
@@ -20,8 +21,16 @@ angular.module('whaleatory').controller('gmapController', ['$scope','$http','$ti
                 success(function(data, status, headers, config) {
                     refresh.updated = data;
                     $scope.liveData = refresh;
-                    $scope.markers = $scope.liveData.updated;
-                    $scope.markers[$scope.liveData.updated.length-1].options = { "animation": 1 };
+                    //$scope.markers = $scope.liveData.updated;
+                    for (var i = 0; i < $scope.liveData.updated.length; i++) {
+                        var marker = $scope.liveData.updated[i];
+                        if (!containsObject(marker,$scope.markers)) {
+                            $scope.markers.push(marker);
+                        } 
+                        var animate = (($scope.liveData.updated.length-1) == i) ? 1 : 0;
+                        $scope.markers[i].options = { "animation": animate };
+                    }
+                    
                 }).
                 error(function(data, status, headers, config) {
                 });
@@ -29,24 +38,10 @@ angular.module('whaleatory').controller('gmapController', ['$scope','$http','$ti
         };
 
         $scope.liveData  = $scope.onTimeout();  //Timeout function
-
-        $scope.markers = [];
         $scope.$watch('liveData', function () {
             $timeout($scope.onTimeout, refreshRate);
-
-            if (typeof $scope.liveData.updated != 'undefined') {
-                for (var i = 0; i < $scope.liveData.updated.length; i++) {
-                    var marker = $scope.liveData.updated[i];
-
-                    if (!containsObject(marker,$scope.markers)) {
-                        var last = $scope.liveData.updated.length == (i+1) ? 1 : 0;
-                        marker.options = { "animation": last };
-                        $scope.markers.push(marker);
-                    }
-                }
-            }
-
         });
+        
         $scope.windowOptions = {
             visible: false
         };
