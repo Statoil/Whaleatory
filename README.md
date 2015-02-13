@@ -11,6 +11,8 @@ Url to working cloud version: [https://calm-sea-3177.herokuapp.com/](https://cal
 [MEAN](http://mean.io/) stack (MongoDB, Express, AngularJS and Node.JS.)</br>
 [Phidget](http://www.phidgets.com/) with [Python](https://www.python.org/) code 
 
+![front](https://github.com/Statoil/Whaleatory/blob/master/public/techstack.png)
+
 ## Running Locally
 
 Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
