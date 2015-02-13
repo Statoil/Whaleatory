@@ -47,6 +47,12 @@ $ git push heroku master
 $ heroku open
 ```
 
+You will also have to attach a MongoDB instance as an addon in heroku e.g. from MongoLab
+
+```
+$ heroku addons:add mongolab
+```
+
 ## Team
 
 * Harald Wesenberg
