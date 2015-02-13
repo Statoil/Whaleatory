@@ -1,8 +1,10 @@
 # Whaleatory
 
+![front](https://github.com/Statoil/Whaleatory/blob/master/public/front.png)
+
 Register whale observations from a Phidget/Binoculars arrangement, and post observations to the Cloud observation map.
 
-Url to working cloud version: http:/calm-sea-3177.herokuapp.com
+Url to working cloud version: [https://calm-sea-3177.herokuapp.com/](https://calm-sea-3177.herokuapp.com/)
 
 ## Technology Stack
 
