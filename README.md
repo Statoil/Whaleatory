@@ -2,7 +2,7 @@
 
 Register whale observations from a Phidget/Binoculars arrangement, and post observations to the Cloud observation map.
 
-Url to working cloud version: 
+Url to working cloud version: http:/calm-sea-3177.herokuapp.com
 
 ## Technology Stack
 
@@ -42,6 +42,13 @@ $ heroku create
 $ git push heroku master
 $ heroku open
 ```
+
+## Team
+
+* Harald Wesenberg
+* Jon Rogde
+* Pier Lorenzo Paracchini
+* Stein-Arne Sivertsen
 
 ## Documentation detailed
 
